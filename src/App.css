@@ -422,11 +422,17 @@ nav {
   }
 }
 /*end of services */
+
 /* featured rooms */
 
 .featured-rooms {
   padding: 5rem 0;
 }
+
+.featured-rooms .section-title {
+  color: var(--mainBlack);
+}
+
 .featured-rooms-center {
   width: 80vw;
   margin: 0 auto;
@@ -447,15 +453,7 @@ nav {
     max-width: 1170px;
   }
 }
-
-.featured-rooms .section-title{
-  color: var(--mainBlack);
-}
-
-.featured-rooms p {
-  color: var(--mainBlack);
-}
-/* end pf featured rooms */
+/* end of featured rooms */
 /* room */
 .room {
   box-shadow: var(--lightShadow);
@@ -467,12 +465,17 @@ nav {
 
 .img-container {
   position: relative;
+  overflow: hidden;
 }
+
 .img-container img {
-  width: 100%;
   display: block;
+  width: 100%;
+  max-height: 15rem;
+  object-fit: cover;
   transition: var(--mainTransition);
 }
+
 .price-top {
   position: absolute;
   top: 0;
@@ -485,12 +488,14 @@ nav {
   text-align: center;
   transition: var(--mainTransition);
 }
+
 .price-top h6 {
   margin-bottom: 0;
   font-size: 0.9rem;
   font-weight: 300;
   letter-spacing: var(--mainSpacing);
 }
+
 .room-link {
   position: absolute;
   top: 50%;
@@ -519,23 +524,34 @@ nav {
   letter-spacing: var(--mainSpacing);
   color: var(--mainBlack);
 }
+
 /* end of room  */
+
 /* single room*/
 
 .single-room {
   padding: 5rem 0 0 0;
 }
 .single-room-images {
-  width: 80vw;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-row-gap: 2rem;
-  grid-column-gap: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
 }
-.single-room-images img {
+
+.single-room-images .img-container {
+  width: 500px;
+  height: 300px; 
+  margin: 10px;
+}
+
+.single-room-images .img-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  display: block;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
 }
 .single-room-info {
   width: 80vw;
@@ -565,7 +581,7 @@ nav {
 }
 .room-extras {
   width: 80vw;
-  margin: 0 auto 3rem auto;
+  margin: 3rem auto 3rem auto;
 }
 .room-extras h6 {
   text-transform: capitalize;
@@ -600,12 +616,13 @@ nav {
   padding: 5rem 0;
 }
 .roomslist-center {
-  width: 80vw;
+  width: 90vw;
   margin: 0 auto;
+  max-width: 1170px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-column-gap: 1.5rem;
   grid-row-gap: 2rem;
-  grid-column-gap: 30px;
 }
 
 @media screen and (min-width: 776px) {
