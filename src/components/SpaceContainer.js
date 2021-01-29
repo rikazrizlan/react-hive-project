@@ -2,6 +2,7 @@ import React from 'react';
 import SpaceList from './SpaceList';
 import {withSpaceConsumer} from '../context';
 import Loading from './Loading';
+import SpaceFilter from './SpaceFilter';
 
 function SpaceContainer({context}) {
     
@@ -13,6 +14,7 @@ function SpaceContainer({context}) {
 
     return (
         <>
+            <SpaceFilter spaces={spaces} />
             <SpaceList spaces={sortedSpaces} />
         </>
     )

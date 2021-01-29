@@ -61,6 +61,41 @@ class SpaceProvider extends Component {
         return space;
     }
 
+    handleChange = event => {
+        const target = event.target;
+        const value = target.type === 'checkbox'? target.checked : target.value;
+        const name = target.name;
+        this.setState({
+            [name] : value
+        }, this.filterSpaces)
+    }
+
+    filterSpaces = () => {
+        let {spaces, type, capacity, minSize, maxSize, ac} = this.state;
+
+        let tempSpaces = [...spaces];
+
+        capacity = parseInt(capacity);
+
+        if(type != 'all') {
+            tempSpaces = tempSpaces.filter(space => space.type === type)
+        }
+
+        if(capacity != 1) {
+            tempSpaces = tempSpaces.filter(space => space.capacity >= capacity)
+        }
+
+        tempSpaces = tempSpaces.filter(space => space.size >= minSize && space.size <= maxSize)
+
+        if(ac) {
+            tempSpaces = tempSpaces.filter(space => space.ac === false)
+        }
+
+        this.setState({
+            sortedSpaces: tempSpaces
+        })
+    }
+
     render() {
         return (
             <div>
