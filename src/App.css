@@ -535,6 +535,7 @@ nav {
 .single-room {
   padding: 5rem 0 0 0;
 }
+
 .single-room-images {
   display: flex;
   flex-wrap: wrap;
@@ -542,21 +543,14 @@ nav {
   margin: 1rem 1rem;
 }
 
-.single-room-images .img-container {
-  width: 500px;
-  height: 15rem; 
-  margin: 10px;
-}
-
-.single-room-images .img-container img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  max-height: 20rem;
-  object-fit: cover;
+.single-room-images img {
+  min-width: 100%;
+  max-width: 500px;
+  height: 500px;
+  object-fit: contain;
   opacity: 0.8;
 }
+
 .single-room-info {
   width: 80vw;
   display: grid;

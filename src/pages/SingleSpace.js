@@ -53,9 +53,7 @@ export default class SingleSpace extends Component {
                     <div className="single-room-images">
                         {images.map((item, index) => {
                             return (
-                                <div className="img-container">
-                                    <img src={item} key={index} alt={name} />
-                                </div>
+                                <img src={item} key={index} alt={name} />   
                             );
                         })}
                     </div>
